@@ -1,28 +1,17 @@
 #include <iostream>
 #include <cstring>
+#include "AFN.h"
 
 using namespace std;
+
 int main()
 {
-    int ns, nsf;
-    cout<<"Numarul de stari: ";
-    cin>>ns;
-    cout<<endl<<"Numarul de stari finale: ";
-    cin>>nsf;
-    char stari[ns], finale[nsf];
-    cout<"Introduceti starile: ";
-    for(int i=0;i<ns;i++)
-        cin>>stari[i];
-    cout<<endl<<"Introduceti starile finale: "
-    for(int i=0;i<nsf;i++)
-        cin>>finale[i];
-    cout<<"Introduceti numarul de simboluri din alfabet: ";
-    int na;
-    cin>>na;
-    char alfabet[na];
-    for (int i=0;i<na;i++)
-        cin>>alfabet[i];
-
-
+    cout<<"Cuvantul: ";
+    char cuvant[20];
+    cin>>cuvant;
+    AFN automat;
+    if(automat.Verifica(0,0,cuvant)==true)
+        cout<<"\nCuvantul apartine alfabetului.\n";
+    else cout<<"\nCuvantul nu apartine alfabetului.\n";
     return 0;
 }
